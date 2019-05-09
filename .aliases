@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Bash
+alias ll="ls -la"
+alias reload="source ~/.bash_profile"
+
+# Ruby
+alias be="bundle exec"
+alias br="bundle exec rake"
+alias sp="bundle exec rspec"
+alias rc="rails c"
+alias rs="rails s"
+alias rf="redis-cli flushall"
+alias fs="foreman start"
+
+# Postgres
+alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+
+# Dev
+alias unused="git ctags; cat ./.git/tags | unused --stdin -C"
+
+# OSX
+alias webcam="sudo killall VDCAssistant; sudo killall AppleCameraAssistant"
+alias update="sudo softwareupdate -ia; brew doctor; brew upgrade; brew update; brew cleanup; brew cask cleanup"
+alias cmds="sed 's/|/\n/g' ~/.bash_history | awk '{CMD[\$1]++;count++;}END { for (a in CMD)print CMD[a] \" \" CMD[a]/count*100 \"% \" a;}' | grep -v \"./\" | column -c3 -s \" \" -t | sort -nr | nl |  head -n50"
+alias lock="open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+
+# Heroku
+alias pushdemo="git push heroku-demo heroku:master && heroku run bin/rake db:migrate --remote heroku-demo"
+
+# Travis
+alias amen="git commit --amend --no-edit && git push -f"
