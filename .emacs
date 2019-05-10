@@ -141,6 +141,7 @@
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(setq-default flycheck-disabled-checkers '(html-tidy))
 
 ;; robe
 (add-hook 'ruby-mode-hook 'robe-mode)
