@@ -12,7 +12,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck ag yaml-mode magit inf-ruby zeal-at-point yasnippet scss-mode coffee-mode angular-snippets angular-mode))))
+    (robe flycheck ag yaml-mode magit inf-ruby zeal-at-point yasnippet scss-mode coffee-mode angular-snippets angular-mode))))
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
@@ -96,6 +96,7 @@
 ;; yasnippet
 ;; zeal-at-point
 ;; flycheck
+;; robe
 
 ;; Yasnippet (Auto-complete code)
 (add-to-list 'load-path ".emacs.d/elpa/yasnippet-20170923.1646/")
@@ -140,3 +141,6 @@
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; robe
+(add-hook 'ruby-mode-hook 'robe-mode)
